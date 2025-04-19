@@ -1,0 +1,48 @@
+
+1. Toastify in React refers to using the React-Toastify library to display non-blocking notifications in React applications. 
+Non-blocking notifications का मतलब है कि जब आपकी React application में कोई notification दिखाई जाती है, तो वह user की current interaction को बाधित नहीं करती।
+
+
+2. Static Path: /doctors - Matches only this exact path.
+Dynamic Path: /doctors/:speciality - Contains a dynamic segment (:speciality) that can match any value.
+
+
+3. React में NavLink का उपयोग मुख्य रूप से navigation links को manage करने और active state को highlight करने के लिए किया जाता है। यह users को यह दिखाने में मदद करता है कि वे वर्तमान में application में कहां हैं।
+to: Specifies the route the link navigates to.
+end: Ensures the link is active only when the exact route matches.
+style: A function that dynamically applies styles based on the isActive property.
+
+4. CSS में m-auto (margin: auto) का इस्तेमाल child element को center करने के लिए किया जाता है। लेकिन यह vertical center तभी करता है जब parent container ऐसी layout का इस्तेमाल करे जो vertical alignment को सपोर्ट करे, जैसे flexbox या CSS grid।
+
+
+5. CSS और Tailwind के बीच तालमेल
+जब आपका प्रोजेक्ट Tailwind CSS और पारंपरिक CSS दोनों का मिश्रण हो, तो @apply CSS की कस्टम रूल्स में Tailwind यूटिलिटी क्लास को इस्तेमाल करने की अनुमति देता है।
+
+css
+Copy code
+.alert-success {
+    @apply text-green-800 bg-green-200 border border-green-400;
+}
+
+6. leading-tight एक Tailwind CSS उपयोगिता है जो टेक्स्ट की लाइन के बीच की दूरी (लाइन हाइट) को नियंत्रित करती है। यह लाइन को "टाइट" (यानी कम दूरी) बनाती है, जिससे हेडिंग्स और कॉम्पैक्ट टेक्स्ट लेआउट अधिक सटीक और साफ दिखते हैं। आप इसे विभिन्न स्क्रीन आकारों (जैसे md, lg) पर अलग-अलग तरीके से लागू कर सकते हैं।
+
+
+
+7. flex-shrink यह निर्धारित करता है कि किसी आइटम को फ्लेक्स कंटेनर में जगह कम होने पर सिकुड़ने की अनुमति है या नहीं।
+
+8. flex-shrink-0 का मतलब है:
+आइटम को बिल्कुल सिकुड़ने (shrink) नहीं दिया जाएगा।
+अगर फ्लेक्स कंटेनर में जगह कम हो, तो भी यह आइटम अपनी मूल चौड़ाई (width) या ऊँचाई (height) बनाए रखेगा।
+<div class="flex">
+  <div class="w-64 bg-blue-500 flex-shrink-0">मैं सिकुड़ूँगा नहीं</div>
+  <div class="flex-1 bg-gray-300">मुझे सिकुड़ने दो</div>
+</div>
+यहाँ flex-shrink-0 का उपयोग सुनिश्चित करेगा कि:
+पहला आइटम (नीला बॉक्स) अपनी चौड़ाई (64px) को हमेशा बनाए रखेगा।
+दूसरा आइटम (ग्रे बॉक्स) फ्लेक्स कंटेनर में बची हुई जगह लेगा।
+
+
+7. scrollTo(x, y) फंक्शन:
+
+scrollTo(x, y) एक जावास्क्रिप्ट का इनबिल्ट फंक्शन है, जो पेज को दिए गए (x, y) कोऑर्डिनेट्स पर स्क्रॉल करता है।
+Back-to-Top Button: यह सबसे अधिक "Back to Top" बटन में उपयोग किया जाता है, जिससे यूज़र को पेज के टॉप पर जल्दी से ले जाया जा सके।

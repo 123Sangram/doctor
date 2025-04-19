@@ -1,0 +1,29 @@
+slots_booked: {
+    type: Object,
+    default: {}
+}
+इसका मतलब है कि slots_booked फ़ील्ड एक Object होगी।
+यदि कोई वैल्यू प्रदान नहीं की गई, तो इसकी default value {} (खाली ऑब्जेक्ट) होगी।
+{minimize: false} का अर्थ
+javascript
+Copy
+Edit
+},{minimize:false}
+Mongoose में minimize: false का मतलब है कि MongoDB में खाली {} ऑब्जेक्ट को सेव किया जाएगा।
+डिफ़ॉल्ट रूप से, Mongoose खाली ऑब्जेक्ट {} को हटा देता है (यानी सेव नहीं करता)।
+लेकिन minimize: false सेट करने से Mongoose खाली {} को भी डेटाबेस में स्टोर करेगा।
+
+समझें:
+javascript
+Copy
+Edit
+const doctorModel = mongoose.models.doctor || mongoose.model('Doctor', doctorSchema);
+इस कोड का उद्देश्य Mongoose मॉडल को डुप्लिकेट डिफ़ाइन करने से रोकना है।
+
+ब्रेकडाउन:
+1️⃣ mongoose.models.doctor क्या करता है?
+mongoose.models एक ऑब्जेक्ट है जो सभी पहले से डिफ़ाइन किए गए Mongoose मॉडल्स को स्टोर करता है।
+mongoose.models.doctor चेक करता है कि "doctor" नाम का मॉडल पहले से मौजूद है या नहीं।
+अगर यह मॉडल पहले से एक्सिस्ट करता है, तो वही इस्तेमाल किया जाएगा।
+2️⃣ mongoose.model('Doctor', doctorSchema) क्या करता है?
+अगर "doctor" नाम का मॉडल पहले से डिफ़ाइन नहीं है, तो नया मॉडल क्रिएट किया जाएगा।
